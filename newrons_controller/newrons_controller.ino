@@ -1,10 +1,14 @@
+#include "secret.h"
+#include "RTClib.h"
 #include <Adafruit_NeoPixel.h>
 
 #define INLEN 256
 char instr[INLEN + 1];
 
 Adafruit_NeoPixel pixels(1, 6, NEO_GRB + NEO_KHZ800);
- 
+
+RTC_PCF8523 rtc;
+
 void setup() {
   // USB.
   Serial.begin(115200);
@@ -17,15 +21,39 @@ void setup() {
   pinMode(6, OUTPUT);
   pixels.begin();
 
-  // Test LED.
+  // Flash LED to indicate device is on.
   pixels.setPixelColor(0, pixels.Color(0, 150, 0));
   pixels.show();
   delay(1000);
   pixels.setPixelColor(0, pixels.Color(0, 0, 0));
   pixels.show();
+
+  // PCF8523 real-time clock.
+  rtc.begin();
+
+  // Get current date/time.
+  DateTime now = rtc.now();
+  //rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));   // Run once to initialize clock.
+
+//  Serial.print(now.year(), DEC);
+//  Serial.print('/');
+//  Serial.print(now.month(), DEC);
+//  Serial.print('/');
+//  Serial.print(now.day(), DEC);
+//  Serial.print(" ");
+//  Serial.print(now.hour(), DEC);
+//  Serial.print(':');
+//  Serial.print(now.minute(), DEC);
+//  Serial.print(':');
+//  Serial.print(now.second(), DEC);
+//  Serial.println();
+  
+  // Get Google calendar events.
+  String apiUrl = "https://www.googleapis.com/calendar/v3/calendars/" EMAIL_ADDRESS "/events?access_token=" ACCESS_TOKEN "&timeMin=2019-01-01T10:00:00-05:00&timeMax=2019-01-20T10:00:00-05:00";
+
 }
 
-void loop() {
+void loop() {  
    // Read a line of data from JeVois:
    byte len = Serial1.readBytesUntil('\n', instr, INLEN);
  
