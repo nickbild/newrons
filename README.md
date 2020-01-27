@@ -24,3 +24,6 @@ Front left view:
 
 Front left angle view:
 ![front left angle](https://raw.githubusercontent.com/nickbild/newrons/master/media/front_left_angle_sm.jpg)
+
+Side angle view:
+![Side angle](https://raw.githubusercontent.com/nickbild/newrons/master/media/side_angle_sm.jpg)
