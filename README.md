@@ -1,7 +1,5 @@
 # Newrons
 
-Details coming soon!
-
 Give your memory a boost with Newrons.
 
 Newrons are smart glasses that offer a gentle memory assist by flashing a light in the wearer's peripheral vision when they are in the vicinity of an object associated with an event on their calendar.  For example, if the user has "Take Medicine" on their calendar at 2:00PM, and they are near a pill bottle around that time, a light on the glasses will flash to jog the wearer's memory.
@@ -14,7 +12,7 @@ A pair of glasses is fitted with a JeVois A33 Smart Machine Vision Camera, an Ar
 
 The JeVois is configured to run a TensorFlow deep convolutional neural network trained on the ImageNet dataset for object detection.  Real-time information about detected objects is transmitted via the 4-pin serial interface to the Arduino.
 
-The Arduino connects via WiFi to the Google Calendar API and retrieves events for the current day using information from the real time clock.  When an object is detected that is associated with a calendar event, within a specified window of time around that event, an LED is pulsed.
+The Arduino connects via WiFi to the Google Calendar API and retrieves events for the current day using information from the real time clock.  When an object is detected that is associated with a calendar event, within a specified window of time around that event, an LED is pulsed.  [Arduino Code](https://github.com/nickbild/newrons/blob/master/newrons_controller/newrons_controller.ino)
 
 ## Media
 
