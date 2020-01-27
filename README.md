@@ -40,6 +40,10 @@ Front left angle view:
 Side angle view:
 ![Side angle](https://raw.githubusercontent.com/nickbild/newrons/master/media/side_angle_sm.jpg)
 
+## Circuit Diagram
+
+![Side angle](https://raw.githubusercontent.com/nickbild/newrons/master/media/diagram_bb.jpg)
+
 ## Bill of Materials
 
 - JeVois A33 Smart Machine Vision Camera
