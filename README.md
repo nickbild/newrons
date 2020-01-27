@@ -15,3 +15,12 @@ See it in action:
 
 Top view:
 ![top](https://raw.githubusercontent.com/nickbild/newrons/master/media/top_sm.jpg)
+
+Front view:
+![front](https://raw.githubusercontent.com/nickbild/newrons/master/media/front_sm.jpg)
+
+Front left view:
+![front left](https://raw.githubusercontent.com/nickbild/newrons/master/media/front_left_sm.jpg)
+
+Front left angle view:
+![front left angle](https://raw.githubusercontent.com/nickbild/newrons/master/media/front_left_angle_sm.jpg)
