@@ -73,13 +73,7 @@ void setup() {
   pinMode(6, OUTPUT);
   pixels.begin();
 
-  // Flash LED to indicate device is ready.
-  pixels.setPixelColor(0, pixels.Color(0, 150, 0));
-  pixels.show();
-  delay(1000);
-  pixels.setPixelColor(0, pixels.Color(0, 0, 0));
-  pixels.show();
-
+  flashLED();
 }
 
 void loop() {
@@ -116,7 +110,7 @@ void loop() {
         takeMeds = 1;
       } else if (String(summary).indexOf("Go for a walk")) {
         goWalk = 1;
-      } else if (String(summary).indexOf("Make lunch")) {
+      } else if (String(summary).indexOf("Make Lunch")) {
         makeLunch = 1;
       }
 
@@ -138,16 +132,27 @@ void loop() {
     Serial.println(instr);
 
     if (String(instr).indexOf("pill_bottle") > -1 && takeMeds) {
-      pixels.setPixelColor(0, pixels.Color(0, 150, 0));
-      pixels.show();
+      flashLED();
     } else if (String(instr).indexOf("microwave") > -1 && makeLunch) {
-      pixels.setPixelColor(0, pixels.Color(150, 0, 0));
-      pixels.show();
-    } else if ((String(instr).indexOf("running_shoe") > -1 || String(instr).indexOf("loafer") > -1) && goWalk) {
-      pixels.setPixelColor(0, pixels.Color(0, 0, 150));
-      pixels.show();
+      flashLED();
+    } else if ((String(instr).indexOf("running_shoe") > -1 || String(instr).indexOf("Loafer") > -1) && goWalk) {
+      flashLED();
     }
 
   }
 
+}
+
+void flashLED() {
+  for (int i=1; i<151; i++) {
+    pixels.setPixelColor(0, pixels.Color(0, 0, i));
+    pixels.show();
+    delay(12);
+  }
+  
+  for (int i=149; i>=0; i--) {
+    pixels.setPixelColor(0, pixels.Color(0, 0, i));
+    pixels.show();
+    delay(12);
+  }
 }
