@@ -12,3 +12,6 @@ This offers the advantage of reminding the wearer of something they need to do e
 
 See it in action:
 [YouTube](https://www.youtube.com/watch?v=C8D3Lubc3Jo)
+
+Top view:
+![top](https://raw.githubusercontent.com/nickbild/newrons/master/media/top_sm.jpg)
